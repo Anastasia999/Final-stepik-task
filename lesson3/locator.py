@@ -56,3 +56,13 @@ success_editing_text = ".alertinner"
 profile_email_labbel = ".table tr:nth-child(2) td"
 
 item_buy_button = "#add_to_basket_form button"
+
+registration_email_input = "#id_registration-email"
+registration_pswd_input1 = "#id_registration-password1"
+registration_pswd_input2 = "#id_registration-password2"
+registration_button = "[name='registration_submit']"
+registration_email = "la+10@mail.com"
+success_registration_alert = ".alertinner"
+
+
+
