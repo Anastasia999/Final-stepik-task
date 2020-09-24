@@ -8,7 +8,7 @@ def find_all(page, locator):
     return page.find_elements_by_css_selector(locator)
 
 def test_cart_button(browser):
-   browser.get(locator_.main_page)
+    browser.get(locator_.main_page)
 
     time.sleep(5)
 
