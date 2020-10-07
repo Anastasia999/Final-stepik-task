@@ -8,4 +8,6 @@ def test_guest_can_add_product_to_basket(browser):
     page.open()  # открываем страницу
     page.add_to_cart()
     page.solve_quiz_and_get_code()
+    page.success_alert()
+    page.price_in_cart()
 

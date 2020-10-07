@@ -8,6 +8,16 @@ class ProductPage(BasePage):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
         button.click()
 
+    def success_alert(self):
+        product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
+        success_alert = self.browser.find_element(*ProductPageLocators.SUCCESS_ALERT).text
+        assert product_name in success_alert, "Product is not added to cart"
+
+    def price_in_cart(self):
+        product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        cart_price = self.browser.find_element(*ProductPageLocators.PRICE_IN_CART).text
+        assert product_price in cart_price, "Price isn't match"
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
