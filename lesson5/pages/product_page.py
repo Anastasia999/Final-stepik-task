@@ -10,8 +10,8 @@ class ProductPage(BasePage):
 
     def success_alert(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_TITLE).text
-        success_alert = self.browser.find_element(*ProductPageLocators.SUCCESS_ALERT).text
-        assert product_name in success_alert, "Product is not added to cart"
+        success_alert = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT).text
+        assert product_name == success_alert, "Product is not added to cart"
 
     def price_in_cart(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
