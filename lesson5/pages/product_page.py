@@ -32,7 +32,18 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT), \
+            "Success message is presented, but should not be"
 
-    #def should_be_add_to_cart(self):
-        #assert ""
+    def should_be_success_message(self):
+        assert self.is_disappeared_element_present(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT), \
+            "Element isn't displayed, but should be"
+
+
+
+    #def should_be_product_page(self):
+    #    assert not self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT), \
+     #       "Success message is presented, but should not be"
+
 
