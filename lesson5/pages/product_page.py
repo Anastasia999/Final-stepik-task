@@ -5,7 +5,7 @@ import math
 
 class ProductPage(BasePage):
     def add_to_cart(self):
-        button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
+        button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON_FROM_PRODUCT_PAGE)
         button.click()
 
     def success_alert(self):
@@ -39,6 +39,25 @@ class ProductPage(BasePage):
     def should_be_success_message(self):
         assert self.is_disappeared_element_present(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT), \
             "Element isn't displayed, but should be"
+
+    def check_available_product_amount(self):
+        assert self.is_element_present(*ProductPageLocators.AVAILABLE_AMOUNT),\
+             "Product unavailable for buying"
+
+    def open_catalog(self):
+        self.browser.find_element(*ProductPageLocators.CATALOG_LINK).click()
+        catalog_title = self.browser.find_element(*ProductPageLocators.CATALOG_HEADER).text
+        assert "All products" == catalog_title, \
+               "Catalog isn't opened"
+
+    def add_to_cart_from_catalog(self):
+        self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON_FROM_CATALOG_PAGE).click()
+
+
+
+
+
+
 
 
 
