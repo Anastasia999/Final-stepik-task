@@ -56,13 +56,3 @@ class ProductPage(BasePage):
 
 
 
-
-
-
-
-
-    #def should_be_product_page(self):
-    #    assert not self.is_not_element_present(*ProductPageLocators.PRODUCT_NAME_SUCCESS_ALERT), \
-     #       "Success message is presented, but should not be"
-
-

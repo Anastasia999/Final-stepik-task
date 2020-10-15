@@ -24,8 +24,6 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
-    # def should_be_login_page(self):
-    #     assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login pag is not present"
 
     def is_element_present(self, how, what):
         try:
